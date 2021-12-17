@@ -31,7 +31,7 @@ class App extends Component{
       let vowelsArray = currentWord.split("").filter(vowel => {
         return vowel === "a" || vowel === "e" || vowel === "i" || vowel === "o" || vowel === "u"
       })
-      console.log("vowelsArray:", vowelsArray)
+      console.log("vowelsArray:", vowelsArray) 
 
       // your code here!
       //use IndexOf built in method to find index of the first vowelsArray
