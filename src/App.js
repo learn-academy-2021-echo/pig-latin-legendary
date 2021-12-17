@@ -32,10 +32,20 @@ class App extends Component{
         return vowel === "a" || vowel === "e" || vowel === "i" || vowel === "o" || vowel === "u"
       })
       console.log("vowelsArray:", vowelsArray) 
-
+      let firstVowelIndex = currentWord.indexOf(vowelsArray[0])
+          if(firstVowelIndex === 0){
+            return currentWord + "way";
+          } else if(firstVowelIndex > 0){
+           //throw
+            let firstPartOfCurrentWord = currentWord.slice (0, firstVowelIndex)
+            let restPart = currentWord.slice (firstVowelIndex, currentWord.length)
+            console.log(firstPartOfCurrentWord, restPart, currentWord)
+          return restPart + firstPartOfCurrentWord +  "ay"
+          }
       // your code here!
       //use IndexOf built in method to find index of the first vowelsArray
       //if index === 0, return currentWord + way to the end (.concat/push)
+
       //if index > 0, then return that slice, push it to the end
       //push or concat "ay" to the end of the string
       //search first character to see if it's a consonant
@@ -113,7 +123,7 @@ class App extends Component{
           <button onClick={this.restartGame}>Clear</button>
         </div>
         <p>{this.state.phraseTranslated}</p>
-        <footer>Coded by ~your name here~</footer>
+        <footer>Coded by ~ Antonio - Jason - Samantha ~</footer>
       </>
     )
   }
