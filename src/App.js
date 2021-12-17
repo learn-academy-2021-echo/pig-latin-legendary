@@ -34,7 +34,7 @@ class App extends Component{
       console.log("vowelsArray:", vowelsArray)
 
       // your code here!
-
+      
       // Remember: console.log is your friend :)
 
 
