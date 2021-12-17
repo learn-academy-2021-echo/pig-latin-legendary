@@ -31,9 +31,33 @@ class App extends Component{
       let vowelsArray = currentWord.split("").filter(vowel => {
         return vowel === "a" || vowel === "e" || vowel === "i" || vowel === "o" || vowel === "u"
       })
-      console.log("vowelsArray:", vowelsArray)
-
+      console.log("vowelsArray:", vowelsArray) 
+      let firstVowelIndex = currentWord.indexOf(vowelsArray[0])
+          if(firstVowelIndex === 0){
+            return currentWord + "way";
+          } else if(firstVowelIndex > 0){
+           //throw
+            let firstPartOfCurrentWord = currentWord.slice (0, firstVowelIndex)
+            let restPart = currentWord.slice (firstVowelIndex, currentWord.length)
+            console.log(firstPartOfCurrentWord, restPart, currentWord)
+          return restPart + firstPartOfCurrentWord +  "ay"
+          }
       // your code here!
+      //use IndexOf built in method to find index of the first vowelsArray
+      //if index === 0, return currentWord + way to the end (.concat/push)
+
+      //if index > 0, then return that slice, push it to the end
+      //push or concat "ay" to the end of the string
+      //search first character to see if it's a consonant
+      //if true, move that first character to the entered
+      //add "ay" afterwards
+      //if string starts with "qu", find next vowel and move the "qu" to the end of the string
+      //and then add "ay" to the end of the string
+      //sometimes "y" situation
+      //if "y" is not the vowel, we follow the rules for a consonant
+      //if "y" is the vowel, shift the letter before the "y" to the end of the string
+      //and then add "ay" to the end of the string
+      
 
       // Remember: console.log is your friend :)
 
@@ -99,7 +123,7 @@ class App extends Component{
           <button onClick={this.restartGame}>Clear</button>
         </div>
         <p>{this.state.phraseTranslated}</p>
-        <footer>Coded by ~your name here~</footer>
+        <footer>Coded by ~ Antonio - Jason - Samantha ~</footer>
       </>
     )
   }
